@@ -1,0 +1,11 @@
+<button (click)="onLoadData()">View notification</button>
+
+<h1 *ngIf="data; let name = name">
+  {{data | json}}
+  Hello! {{name}}
+</h1>
+
+<h1 *dumbNgIf="data; let name = name">
+  {{data | json}}
+  Hello! {{name}}
+</h1>
