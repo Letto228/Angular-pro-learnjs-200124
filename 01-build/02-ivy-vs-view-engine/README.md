@@ -1,5 +1,47 @@
 # View Engine VS IVY
 
+Исходный код:
+
+TS: 
+
+```ts
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'ivy';
+  textContent = 'text content';
+  divClasses = 'line';
+
+  check() {
+    console.log('checked');
+  }
+}
+```
+
+HTML:
+
+```html
+<app-header
+    [title]="title"
+></app-header>
+<div
+    [style.width.px]="100"
+    [style.height.px]="5"
+    class="{{divClasses}}"
+></div>
+<h2>Hi</h2>
+<h3
+    class="shadow"
+    (click)="check()"
+>
+    It's my content
+    {{textContent}}
+</h3>
+```
+
 ## Работа View Engine
 
 1. `Template HTML` (компиляция)
@@ -297,7 +339,7 @@ if (rf & 2) {
 
 
 5
-
+-
 ```
 
 </td>
@@ -371,7 +413,7 @@ core["ɵɵelementEnd"]();
 
 5
 
-
+-
 ```
 
 </td>
