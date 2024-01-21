@@ -8,6 +8,9 @@ import { DumbNgIfDirective } from './dumb-ng-if.directive';
   ],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [
+    DumbNgIfDirective
+  ],
 })
 export class DumbNgIfModule { }
