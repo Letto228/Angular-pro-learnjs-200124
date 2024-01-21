@@ -1,0 +1,8 @@
+{
+    "notification": {
+        "title": "Angular pro",
+        "body": "Не забыть выключить утюг",
+        "icon": "http://icon/url",
+        "click_action": "http://navigation-link"
+    }
+}

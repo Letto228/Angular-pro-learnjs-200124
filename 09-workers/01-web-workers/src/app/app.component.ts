@@ -17,6 +17,18 @@ export class AppComponent {
   }
 
   setBigPrime() {
-    this.bigPrime = findBigPrime();
+    const worker = new Worker(
+      new URL('find-big-prime.worker', import.meta.url),
+    );
+
+    worker.addEventListener('message', ({data}) => {
+      this.bigPrime = data;
+      
+      worker.terminate();
+    });
+
+    worker.postMessage('hello');
+
+    // this.bigPrime = findBigPrime();
   }
 }
